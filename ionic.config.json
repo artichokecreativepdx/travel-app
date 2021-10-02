@@ -1,0 +1,7 @@
+{
+  "name": "travel app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
