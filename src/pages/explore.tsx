@@ -6,7 +6,7 @@ import {search} from 'ionicons/icons';
 const maptilerProvider = maptiler('u8fyYdt1QkFGd5hcaTzq', 'voyager')
 export function MyMap() {
   return (
-    <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
+    <Map height={500} defaultCenter={[47.61798491437027, -122.32060673850827]} defaultZoom={11}>
       <Marker width={50} anchor={[50.879, 4.6997]} />
     </Map>
   )
@@ -33,8 +33,8 @@ const Explore: React.FC = () => {
       <Map
   provider={maptilerProvider}
   dprs={[1, 2]} // this provider supports HiDPI tiles
-  height={200}
-  defaultCenter={[50.879, 4.6997]}
+  height={500}
+  defaultCenter={[47.61798491437027, -122.32060673850827]}
   defaultZoom={11}
 />
 
