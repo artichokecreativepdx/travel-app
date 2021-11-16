@@ -6,7 +6,7 @@
   import { personCircle } from "ionicons/icons";
   import { useHistory } from "react-router-dom";
   import { IonItem, IonLabel, IonInput, IonButton, IonIcon, IonAlert } from '@ionic/react';
-  
+  import logo from "../img/planit.png";
   function validateEmail(email: string) {
     var re = /\S+@\S+\.\S+/;
       return re.test(String(email).toLowerCase());
@@ -55,11 +55,14 @@
   
     return (
       <IonPage>
-        <IonHeader>
+         <IonHeader className="logo_splash">
+        <img src={logo} alt="planit logo" width="200" />
+      </IonHeader>
+        
           <IonToolbar>
             <IonTitle>Login</IonTitle>
           </IonToolbar>
-        </IonHeader>
+   
         <IonContent fullscreen className="ion-padding ion-text-center">
           <IonGrid>
           <IonRow>

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useHistory, RouteComponentProps } from "react-router-dom";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
 import { IonItem, IonLabel, IonAvatar } from '@ionic/react';
-
+import logoLong from '../img/planit_adventures.png'
 interface ResetProps
   extends RouteComponentProps<{
     id: string;
@@ -28,11 +28,13 @@ const Dashboard: React.FC<ResetProps> = ({ match }) => {
   }, [])
   return (
     <IonPage>
-      <IonHeader>
+       <IonHeader className="logo_splash">
+        <img src={logoLong} alt="planit logo" />
+      </IonHeader>
         <IonToolbar>
   <IonTitle>Dasboard</IonTitle>
         </IonToolbar>
-      </IonHeader>
+      
       <IonContent fullscreen className="ion-padding ion-text-center">
         <IonGrid>
           <IonRow>

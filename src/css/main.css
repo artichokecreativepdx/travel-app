@@ -1,4 +1,25 @@
-.test_color {
-  background: blue;
+.logo {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.logo_splash {
+  background: #fff;
+  padding: 20px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.avatar-lg {
+  height: 150px;
+  width: 150px;
+  padding: 20px;
 }
 /*# sourceMappingURL=main.css.map */
