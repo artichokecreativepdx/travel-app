@@ -10,10 +10,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { personSharp, imageSharp, homeSharp, logInSharp} from 'ionicons/icons';
-import Profile from './pages/profile';
-import Home from './pages/home';
-import Explore from './pages/explore';
+import { personSharp, imageSharp, homeSharp} from 'ionicons/icons';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -31,7 +28,10 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Login from './pages/login';
-
+import Dashboard from './pages/dashboard';
+import Profile from './pages/profile';
+import Home from './pages/home';
+import Explore from './pages/explore';
 
 const App: React.FC = () => (
   <IonApp>
@@ -39,27 +39,18 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
          
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route path="/explore">
-            <Explore />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
+          
+          <Route path="/home" component={Home} exact={true} />
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/dashboard/:id" component={Dashboard} exact={true} />
+          <Route path="/explore" component={Explore} exact={true}/>
+          <Route path="/profile" component={Profile} exact={true}/>
+           
+          
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="login" href="/login">
-            <IonIcon icon={logInSharp} />
-            <IonLabel>Log In</IonLabel>
-          </IonTabButton>
+          
           <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={personSharp} />
             <IonLabel>Profile</IonLabel>
