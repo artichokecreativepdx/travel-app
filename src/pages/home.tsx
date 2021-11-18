@@ -17,6 +17,7 @@ import {
   IonModal,
 } from "@ionic/react";
 import axios from "axios";
+import { render } from "@testing-library/react";
 
 
 const Home: React.FC = () => {
@@ -34,13 +35,14 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
-    axios.get("http://3.138.163.56:8000/dataset").then((response) => {
-      console.log(response);
+    axios.get("http://127.0.0.1:8000/dataset").then((response) => {
+      console.log(response)
+      
     });
   });
   const callApi = () => {
-    console.log(country);
-    axios.get('http://3.138.163.56:8000/recommend', {
+    
+    axios.get('/recommend', {
       params: {
         region: country,
         cost: cost,
@@ -48,13 +50,13 @@ const Home: React.FC = () => {
         activity: activities,
         healthcare: healthcare,
         lgbt: safety,
-        
         walk_drive: transportation,
       },
     });
   };
 
   return (
+   
     <IonPage>
       <IonHeader className="logo_splash">
         <img src={logoLong} alt="planit logo" />
@@ -193,7 +195,7 @@ const Home: React.FC = () => {
               <IonSelectOption value="drive">Drive</IonSelectOption>
             </IonSelect>
           </IonItem>
-          <IonButton expand="block"  onClick={callApi}>
+          <IonButton expand="block"  onSubmit={callApi}>
             Submit
           </IonButton>
           <IonButton expand="block" onClick={() => setShowModal(false)}>
@@ -204,7 +206,12 @@ const Home: React.FC = () => {
           Where would you like to go
         </IonButton>
 
-        <IonItem></IonItem>
+        <IonItem>
+          answers
+          <div>
+
+          </div>
+        </IonItem>
       </IonContent>
     </IonPage>
   );
