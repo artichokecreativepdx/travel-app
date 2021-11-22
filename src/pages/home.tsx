@@ -42,7 +42,11 @@ const Home: React.FC = () => {
   });
   const callApi = () => {
     
+<<<<<<< HEAD
     axios.get('http://3.138.163.56:8000/recommend', {
+=======
+    axios.get('/recommend', {
+>>>>>>> 31aaab17eb507b6ee419a0d8abe0d7699cedcf25
       params: {
         region: country,
         cost: cost,
