@@ -16,6 +16,7 @@ import {
 import axios from "axios";
 import { useState, useEffect } from "react"; 
 import logoLong from "../img/planit_adventures.png";
+import topSplash from "../img/top_splash.jpg";
 
 
 
@@ -60,6 +61,7 @@ const Home: React.FC = () => {
         <img src={logoLong} alt="planit logo" />
       </IonHeader>
       <IonToolbar>
+        <img src={topSplash} alt="header splash"/>
         <IonItem>
           <IonTitle>home</IonTitle>
         </IonItem>
@@ -206,7 +208,7 @@ const Home: React.FC = () => {
             </IonCardContent>
          </IonCard>
         </IonContent>
-      
+        
     </IonPage>
   );
 };
