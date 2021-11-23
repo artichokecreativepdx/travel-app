@@ -9,22 +9,53 @@ import {
   IonCardContent,
   IonItem,
   IonLabel,
+  IonCardTitle,
+  IonNote,
 } from "@ionic/react";
 import logoLong from "../img/planit_adventures.png";
 import user from "../img/fictional_user.jpeg";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.scss";
 const Profile: React.FC = () => {
+  const data = [
+    {
+      title: "Path",
+      subtitle: "Long Path",
+      image: "../img/path.jpeg",
+    },
+    {
+      title: "Mountians",
+      subtitle: "Big Mountians",
+      image: "../img/mountian.jpeg",
+    },
+    {
+      title: "Ocean",
+      subtitle: "Big Ocean",
+      image: "../img/beach.jpeg",
+    },
+    {
+      title: "Desert",
+      subtitle: "Big Desert",
+      image: "../img/desert.jpeg",
+    },
+    {
+      title: "City",
+      subtitle: "Big City",
+      image: "../img/city.jpeg",
+    },
+  ];
   return (
     <IonPage>
-      <IonHeader className="logo_splash">
-        <img src={logoLong} alt="planit logo" />
-      </IonHeader>
-      <IonToolbar>
-        <IonItem>
-          <IonTitle>Profile</IonTitle>
-        </IonItem>
-      </IonToolbar>
       <IonContent>
+        <IonHeader className="logo_splash">
+          <img src={logoLong} alt="planit logo" />
+        </IonHeader>
+        <IonToolbar>
+          <IonItem>
+            <IonTitle>Profile</IonTitle>
+          </IonItem>
+        </IonToolbar>
+
         <IonCard>
           <IonAvatar className="avatar-lg">
             <img src={user} alt="fictional user" />
@@ -32,15 +63,27 @@ const Profile: React.FC = () => {
           <IonCardContent>
             I am a teacher who enjoys traveling over the summer and on holidays.
             I likes to plan my trips far in advance to tailor them as much as
-            possible before I starts packing.
+            possible before I start packing.
           </IonCardContent>
         </IonCard>
-        <IonCard>
-          <IonCardContent>
-            {/* {swiper} */}
-            Saved Favorite Places
-          </IonCardContent>
-        </IonCard>
+
+        <Swiper spaceBetween={50} slidesPerView={3}>
+          {data.map((card, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <IonCard>
+                  <img src={card.image} alt="card" className="image" />
+
+                  <IonCardContent>
+                    <IonCardTitle className="title">{card.title}</IonCardTitle>
+                    <IonNote className="subtitle">{card.subtitle}</IonNote>
+                  </IonCardContent>
+                </IonCard>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+
         <IonCard>
           <IonCardContent>
             <IonItem button onClick={() => {}}>
@@ -64,5 +107,4 @@ const Profile: React.FC = () => {
     </IonPage>
   );
 };
-  export default Profile;
-
+export default Profile;

@@ -18,12 +18,12 @@ export function MyMap() {
 const Explore: React.FC = () => {
   return (
     <IonPage>
+      <IonContent>
        <IonHeader className="logo_splash">
        
               
        <img src={logoLong} alt="planit logo"/>
        </IonHeader> 
-    <IonContent>
     <IonToolbar>
     <IonTitle slot="start">
             Explore
