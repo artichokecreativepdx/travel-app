@@ -1,76 +1,68 @@
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonItem,
-  IonLabel,
-  IonSelect,
-  IonSelectOption,
-  IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-} from "@ionic/react";
-import axios from "axios";
-import { useState, useEffect } from "react"; 
-import logoLong from "../img/planit_adventures.png";
 
+  import { useState, useEffect } from "react";
 
-
-
-const Home: React.FC = () => {
-  
-  const [country, setCountry] = useState();
-  const [cost, setCost] = useState();
-  const [wifi, setWifi] = useState();
-  const [activities, setActivities] = useState();
-  const [healthcare, setHealthcare] = useState();
-  const [safety, setSafety] = useState();
-  const [identity, setIdentity] = useState();
-  const [transportation, setTransportation] = useState();
-  const options = {
-    cssClass: "my-custom-interface",
-  }; 
-  useEffect(() => {
-    axios.get("http://127.0.0.1:8000/dataset").then((response) => {
-      console.log(response)
-      
-    });
-  });
-  const callApi = () => {
-    
-    axios.get('http://3.138.163.56:8000/recommend', {
-      params: {
-        region: country,
-        cost: cost,
-        wifi: wifi,
-        activity: activities,
-        healthcare: healthcare,
-        lgbt: safety,
-        walk_drive: transportation,
-      },
-    });
-  };
-  return (
+  import {
+    IonContent,
+    IonPage,
+    IonItem,
+    IonLabel,
+    IonSelect,
+    IonSelectOption,
+    IonButton,
    
-    <IonPage>
-      <IonHeader className="logo_splash">
-        <img src={logoLong} alt="planit logo" />
-      </IonHeader>
-      <IonToolbar>
-        <IonItem>
-          <IonTitle>home</IonTitle>
-        </IonItem>
-      </IonToolbar>
-
+  } from "@ionic/react";
+  import axios from "axios";
+  
+  
+  const Questions: React.FC = () => {
     
-      <IonContent>
-        <IonCard>
-          <IonCardContent> 
-            <IonCardHeader>Where would you like to go?</IonCardHeader> 
-        <form>
+    const [country, setCountry] = useState();
+    const [cost, setCost] = useState();
+    const [wifi, setWifi] = useState();
+    const [activities, setActivities] = useState();
+    const [healthcare, setHealthcare] = useState();
+    const [safety, setSafety] = useState();
+    const [identity, setIdentity] = useState();
+    const [transportation, setTransportation] = useState();
+    const options = {
+      cssClass: "my-custom-interface",
+    };
+    // useEffect(() => {
+    //  
+    //   const apiUrl = 'http://3.138.163.56:8000/recommend';
+    //   axios.get(apiUrl).then((repos) => {
+    //     const allRepos = repos.data;
+    //    
+    //   });
+    // };
+  
+    useEffect(() => {
+      axios.get("http://127.0.0.1:8000/dataset").then((response) => {
+        console.log(response)
+        
+      });
+    });
+    const callApi = () => {
+      
+      axios.get('http://3.138.163.56:8000/recommend', {
+        params: {
+          region: country,
+          cost: cost,
+          wifi: wifi,
+          activity: activities,
+          healthcare: healthcare,
+          lgbt: safety,
+          walk_drive: transportation,
+        },
+      });
+    };
+  
+    return (
+     
+      <IonPage>
+       
+  
+        <IonContent>
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
   
@@ -194,22 +186,16 @@ const Home: React.FC = () => {
             <IonButton expand="block"  onSubmit={callApi}>
               Submit
             </IonButton>
-            </form>
-            </IonCardContent>
-            </IonCard>
-            <IonCard>
-          <IonCardContent>
+          <IonItem>
             answers
             <div>
   
             </div>
-            </IonCardContent>
-         </IonCard>
+          </IonItem>
         </IonContent>
-      
-    </IonPage>
-  );
-};
-
-
-export default Home;
+      </IonPage>
+    );
+  };
+  
+  
+  export default Questions;

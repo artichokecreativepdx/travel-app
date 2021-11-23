@@ -2,7 +2,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItemDivider} from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import { useHistory, RouteComponentProps } from "react-router-dom";
+import {  RouteComponentProps } from "react-router-dom";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
 import { IonItem, IonLabel, IonAvatar } from '@ionic/react';
 import logoLong from '../img/planit_adventures.png'
@@ -12,7 +12,7 @@ interface ResetProps
   }> {}
 
 const Dashboard: React.FC<ResetProps> = ({ match }) => {
-  const history = useHistory();
+  
   const [users, setUsers] = useState<Array<any>>([]);
   useEffect(() => {
     const api = axios.create({
