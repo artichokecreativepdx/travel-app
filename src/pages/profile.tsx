@@ -25,27 +25,27 @@ const Profile: React.FC = () => {
     {
       title: "Trail",
       subtitle: "Long Trail",
-      image: "../img/trail.jpeg",
+      image: require ("../img/trail.jpeg"),
     },
     {
       title: "Mountians",
       subtitle: "Big Mountians",
-      image: "../img/mountians.jpeg",
+      image: require("../img/mountians.jpeg"),
     },
     {
       title: "Ocean",
       subtitle: "Big Ocean",
-      image: "../img/beach.jpeg",
+      image: require("../img/beach.jpeg"),
     },
     {
       title: "Desert",
       subtitle: "Big Desert",
-      image: "../img/desert.jpeg",
+      image: require("../img/desert.jpeg"),
     },
     {
       title: "City",
       subtitle: "Big City",
-      image: "../img/city.jpeg",
+      image: require("../img/city.jpeg"),
     },
   ];
   return (
