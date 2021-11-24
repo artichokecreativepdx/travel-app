@@ -15,13 +15,17 @@ import {
 import logoLong from "../img/planit_adventures.png";
 import user from "../img/fictional_user.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Pagination
+} from 'swiper';
 import "swiper/swiper.scss";
+SwiperCore.use([Pagination]);
 const Profile: React.FC = () => {
   const data = [
     {
-      title: "Path",
-      subtitle: "Long Path",
-      image: "../img/path.jpeg",
+      title: "Trail",
+      subtitle: "Long Trail",
+      image: "../img/trail.jpeg",
     },
     {
       title: "Mountians",
@@ -67,7 +71,10 @@ const Profile: React.FC = () => {
           </IonCardContent>
         </IonCard>
 
-        <Swiper spaceBetween={50} slidesPerView={3}>
+        <Swiper 
+        spaceBetween={5} 
+        slidesPerView={3} 
+        pagination={{"dynamicBullets": true}}>
           {data.map((card, index) => {
             return (
               <SwiperSlide key={index}>
