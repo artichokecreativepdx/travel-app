@@ -26,7 +26,7 @@ const Profile: React.FC = () => {
     {
       title: "Mountians",
       subtitle: "Big Mountians",
-      image: "../img/mountian.jpeg",
+      image: "../img/mountians.jpeg",
     },
     {
       title: "Ocean",
