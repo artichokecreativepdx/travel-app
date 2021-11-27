@@ -13,6 +13,11 @@ import {
   IonNote,
 } from "@ionic/react";
 import logoLong from "../img/planit_adventures.png";
+import Beach from "../img/beach.jpeg";
+import City from "../img/city.jpeg";
+import Desert from "../img/desert.jpeg";
+import Mountians from "../img/mountians.jpeg";
+import Trail from "../img/trail.jpeg";
 import user from "../img/fictional_user.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
@@ -21,33 +26,7 @@ import SwiperCore, {
 import "swiper/swiper.scss";
 SwiperCore.use([Pagination]);
 const Profile: React.FC = () => {
-  const data = [
-    {
-      title: "Trail",
-      subtitle: "Long Trail",
-      image: require ("../img/trail.jpeg"),
-    },
-    {
-      title: "Mountians",
-      subtitle: "Big Mountians",
-      image: require("../img/mountians.jpeg"),
-    },
-    {
-      title: "Ocean",
-      subtitle: "Big Ocean",
-      image: require("../img/beach.jpeg"),
-    },
-    {
-      title: "Desert",
-      subtitle: "Big Desert",
-      image: require("../img/desert.jpeg"),
-    },
-    {
-      title: "City",
-      subtitle: "Big City",
-      image: require("../img/city.jpeg"),
-    },
-  ];
+  
   return (
     <IonPage>
       <IonContent>
@@ -73,22 +52,57 @@ const Profile: React.FC = () => {
 
         <Swiper 
         spaceBetween={5} 
-        slidesPerView={3} 
+        slidesPerView={1} 
         pagination={{"dynamicBullets": true}}>
-          {data.map((card, index) => {
-            return (
-              <SwiperSlide key={index}>
+          
+           
+              <SwiperSlide >
                 <IonCard>
-                  <img src={card.image} alt="card" className="image" />
-
+                <img src={Mountians} alt="mountians"/>
                   <IonCardContent>
-                    <IonCardTitle className="title">{card.title}</IonCardTitle>
-                    <IonNote className="subtitle">{card.subtitle}</IonNote>
+                    <IonCardTitle className="title">Mountians</IonCardTitle>
+                    <IonNote className="subtitle">Big Mountians</IonNote>
                   </IonCardContent>
                 </IonCard>
               </SwiperSlide>
-            );
-          })}
+              <SwiperSlide >
+                <IonCard>
+                <img src={Beach} alt="Beach"/>
+                  <IonCardContent>
+                    <IonCardTitle className="title">Beach</IonCardTitle>
+                    <IonNote className="subtitle">Sweet Beach</IonNote>
+                  </IonCardContent>
+                </IonCard>
+              </SwiperSlide>
+              <SwiperSlide >
+                <IonCard>
+                <img src={City} alt="City"/>
+                  <IonCardContent>
+                    <IonCardTitle className="title">City</IonCardTitle>
+                    <IonNote className="subtitle">Sure is a city</IonNote>
+                  </IonCardContent>
+                </IonCard>
+              </SwiperSlide>
+              <SwiperSlide >
+                <IonCard>
+                <img src={Desert} alt="desert"/>
+                  <IonCardContent>
+                    <IonCardTitle className="title">Desert</IonCardTitle>
+                    <IonNote className="subtitle">Middle of nowhere</IonNote>
+                  </IonCardContent>
+                </IonCard>
+              </SwiperSlide>
+              <SwiperSlide >
+                <IonCard>
+                <img src={Trail} alt="trail"/>
+                  <IonCardContent>
+                    <IonCardTitle className="title">Trail</IonCardTitle>
+                    <IonNote className="subtitle">Neat little trail</IonNote>
+                  </IonCardContent>
+                </IonCard>
+              </SwiperSlide>
+         
+         
         </Swiper>
 
         <IonCard>

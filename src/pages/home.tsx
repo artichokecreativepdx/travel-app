@@ -22,6 +22,8 @@ import topSplash from "../img/top_splash.jpeg";
 
 
 const Home: React.FC = () => {
+
+  
   
   const [country, setCountry] = useState();
   const [cost, setCost] = useState();
