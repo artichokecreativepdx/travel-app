@@ -5,7 +5,7 @@ import {
   const Card: React.FC = () => {
     return (
         <IonCard>
-        <IonCardContent></IonCardContent>
+        <IonCardContent>word</IonCardContent>
         </IonCard> 
     );
   };

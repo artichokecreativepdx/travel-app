@@ -2,8 +2,6 @@
   import { useState, useEffect } from "react";
 
   import {
-    IonContent,
-    IonPage,
     IonItem,
     IonLabel,
     IonSelect,
@@ -14,12 +12,12 @@
   import axios from "axios";
   
   
-  const Questions: React.FC = () => {
+  const Form: React.FC = () => {
     
-    const [country, setCountry] = useState();
+    const [region, setRegion] = useState();
     const [cost, setCost] = useState();
     const [wifi, setWifi] = useState();
-    const [activities, setActivities] = useState();
+    const [activity, setActivity] = useState();
     const [healthcare, setHealthcare] = useState();
     const [safety, setSafety] = useState();
     const [identity, setIdentity] = useState();
@@ -27,14 +25,7 @@
     const options = {
       cssClass: "my-custom-interface",
     };
-    // useEffect(() => {
-    //  
-    //   const apiUrl = 'http://3.138.163.56:8000/recommend';
-    //   axios.get(apiUrl).then((repos) => {
-    //     const allRepos = repos.data;
-    //    
-    //   });
-    // };
+    
   
     useEffect(() => {
       axios.get("http://127.0.0.1:8000/dataset").then((response) => {
@@ -46,10 +37,10 @@
       
       axios.get('http://3.138.163.56:8000/recommend', {
         params: {
-          region: country,
+          Region: region,
           cost: cost,
           wifi: wifi,
-          activity: activities,
+          activity: activity,
           healthcare: healthcare,
           lgbt: safety,
           walk_drive: transportation,
@@ -59,18 +50,18 @@
   
     return (
      
-      <IonPage>
+      
         
   
-        <IonContent>
+       <form>
             <IonItem>
               <IonLabel>Region of Intrest</IonLabel>
   
               <IonSelect
                 interfaceOptions={options}
-                value={country}
+                value={region}
                 placeholder="select one"
-                onIonChange={(e) => setCountry(e.detail.value)}
+                onIonChange={(e) => setRegion(e.detail.value)}
               >
                 <IonSelectOption value="Europe">Europe</IonSelectOption>
                 <IonSelectOption value="Asia">Asia</IonSelectOption>
@@ -145,9 +136,9 @@
   
               <IonSelect
                 interfaceOptions={options}
-                value={activities}
+                value={activity}
                 placeholder="select one"
-                onIonChange={(e) => setActivities(e.detail.value)}
+                onIonChange={(e) => setActivity(e.detail.value)}
               >
                 <IonSelectOption value="nightlife">nightlife</IonSelectOption>
                 <IonSelectOption value="fun">Fun</IonSelectOption>
@@ -188,14 +179,12 @@
             </IonButton>
           <IonItem>
             answers
-            <div>
-  
-            </div>
+           
           </IonItem>
-        </IonContent>
-      </IonPage>
+        </form>
+     
     );
   };
   
   
-  export default Questions;
+  export default Form;

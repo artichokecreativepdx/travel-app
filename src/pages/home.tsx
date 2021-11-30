@@ -1,15 +1,15 @@
 import {
   IonContent,
   IonPage,
-  IonCard,
   IonCardContent,
   IonCardHeader,
 } from "@ionic/react";
 
 
 import Footer from "../components/footer";
+import Form from "../components/form";
 import Header from "../components/header";
-import Questions from "../components/questions";
+import Card from "../components/card";
 
 
 
@@ -21,22 +21,22 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
      <Header/>
-        <IonCard>
+        <Card>
           <IonCardContent> 
             <IonCardHeader>Where would you like to go?</IonCardHeader> 
       
-            <Questions />
+           
       
             </IonCardContent>
-            </IonCard>
-            <IonCard>
+            
+            </Card>
+            <Form/>
+            <Card>
           <IonCardContent>
             answers
-            <div>
-  
-            </div>
+            
             </IonCardContent>
-         </IonCard>
+         </Card>
          <Footer/>
         </IonContent>
         
