@@ -1,48 +1,42 @@
 import {
   IonContent,
   IonPage,
+  IonCard,
   IonCardContent,
-  IonCardHeader,
-} from "@ionic/react";
+  IonHeader,
+  IonToolbar,
+  IonItem,
+  IonTitle,
+} from '@ionic/react';
 
-
-import Footer from "../components/footer";
-import Form from "../components/form";
-import Header from "../components/header";
-import Card from "../components/card";
-
-
+import Footer from '../components/footer';
+import Form from '../components/form';
+import logoLong from '../img/planit_adventures.png';
+import topSplash from '../img/top_splash.jpeg';
 
 const Home: React.FC = () => {
-
-
   return (
-   
     <IonPage>
       <IonContent>
-     <Header/>
-        <Card>
-          <IonCardContent> 
-            <IonCardHeader>Where would you like to go?</IonCardHeader> 
-      
-           
-      
-            </IonCardContent>
-            
-            </Card>
-            <Form/>
-            <Card>
-          <IonCardContent>
-            answers
-            
-            </IonCardContent>
-         </Card>
-         <Footer/>
-        </IonContent>
-        
+        <IonHeader className="logo_splash">
+          <img src={logoLong} alt="planit logo" />
+        </IonHeader>
+        <IonToolbar>
+          <IonItem>
+            <IonTitle>Home</IonTitle>
+          </IonItem>
+        </IonToolbar>
+        <IonItem>
+          <img src={topSplash} alt="travel" />
+        </IonItem>
+        <Form />
+        <IonCard>
+          <IonCardContent>answers</IonCardContent>
+        </IonCard>
+        <Footer />
+      </IonContent>
     </IonPage>
   );
 };
-
 
 export default Home;

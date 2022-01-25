@@ -1,6 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
 
-import { 
+import {
   IonApp,
   IonIcon,
   IonLabel,
@@ -10,7 +10,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { personSharp, imageSharp, homeSharp} from 'ionicons/icons';
+import { personSharp, imageSharp, homeSharp } from 'ionicons/icons';
 import '@ionic/react/css/core.css';
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -38,19 +38,15 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-         
-          
           <Route path="/home" component={Home} exact={true} />
           <Route path="/login" component={Login} exact={true} />
           <Route path="/dashboard/:id" component={Dashboard} exact={true} />
-          <Route path="/explore" component={Explore} exact={true}/>
-          <Route path="/profile" component={Profile} exact={true}/>
-           
-          
+          <Route path="/explore" component={Explore} exact={true} />
+          <Route path="/profile" component={Profile} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
+
         <IonTabBar slot="bottom">
-          
           <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={personSharp} />
             <IonLabel>Profile</IonLabel>
